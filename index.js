@@ -103,8 +103,6 @@ client.connect(err => {
       })
   })
 
-
-
   app.get('/allorders', (req, res) => {
     OrderCollection.find({})
       .toArray((err, documents) => {
@@ -144,13 +142,11 @@ client.connect(err => {
   })
 
   app.get('/', (req, res) => {
-    res.send('Trust Home Clener!')
+    res.send('Trust home clener project for 11')
   })
 
   console.log("database connection")
 
 });
 
-app.listen(port, () => {
-  process.env.PORT || port
-})
+app.listen(process.env.PORT || port)
