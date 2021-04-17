@@ -38,7 +38,6 @@ client.connect(err => {
       img: Buffer.from(encImg, 'base64')
     };
 
-
     serviceCollection.insertOne({ service, price, description, image })
 
       .then(result => {
