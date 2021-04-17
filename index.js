@@ -35,7 +35,7 @@ client.connect(err => {
     let image = {
       contentType: file.mimetype,
       size: req.files.file.size,
-      img: Buffer(encImg, 'base64')
+      img: Buffer.from(encImg, 'base64')
     };
 
 
