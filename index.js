@@ -141,6 +141,20 @@ client.connect(err => {
       })
   })
 
+
+  app.patch('/update/:id', (req, res) => {
+    console.log(req.params.id)
+    console.log(req.body.status)
+    OrderCollection.updateOne({ _id: ObjectId(req.params.id) },
+      {
+        $set: { status: req.body.status }
+      })
+      .then(result => {
+        res.send(result.modifiedCount > 0)
+      })
+
+  })
+
   app.get('/', (req, res) => {
     res.send('Trust home clener project for 11')
   })
